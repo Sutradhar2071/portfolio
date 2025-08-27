@@ -5,12 +5,14 @@ import Skills from './Skills';
 import Education from './Education';
 import Projects from './Projects';
 import Contact from './Contact';
+import PassionDesign from '../components/PassionDesign';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <About></About>
+            <PassionDesign></PassionDesign>
             <Skills></Skills>
             <Education></Education>
             <Projects></Projects>
