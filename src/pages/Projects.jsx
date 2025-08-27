@@ -103,7 +103,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-sm btn-outline btn-secondary flex items-center gap-2"
+                    className="btn btn-sm btn-outline btn-black flex items-center gap-2"
                   >
                     <FaGithub /> GitHub
                   </a>

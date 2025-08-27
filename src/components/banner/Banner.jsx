@@ -35,7 +35,7 @@ const Banner = () => {
             animate={{ y: [0, -5, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           >
-            🚀 MERN Stack Developer | Frontend Specialist
+            MERN Stack Developer | Frontend Specialist
           </motion.div>
 
           {/* Description */}
