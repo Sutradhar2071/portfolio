@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 import resume from "../../assets/Ringku (1).pdf";
-import img from "../../assets/ringku.png";
+import img from "../../assets/Picture of Ringku.jpg";
 import { NavLink } from "react-router"; 
 
 const Navbar = () => {

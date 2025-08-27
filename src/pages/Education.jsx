@@ -33,19 +33,16 @@ const Education = () => {
           Educational Qualification
         </h2>
 
-        <div className="relative border-l-4 border-primary pl-6 sm:pl-10">
+        <div className="relative border-l-2 border-primary pl-6 sm:pl-10">
           {educationData.map((edu, idx) => (
-            <div
-              key={idx}
-              className="mb-12 ml-2 sm:ml-0 relative group"
-            >
+            <div key={idx} className="mb-12 relative group lg:flex lg:items-start">
               {/* Icon */}
-              <div className="absolute -left-[28px] top-1 bg-primary text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center shadow-lg group-hover:bg-secondary transition">
-                <FaGraduationCap className="text-xs sm:text-sm" />
+              <div className="absolute -left-[30px] sm:-left-[35px] top-2 bg-primary text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shadow-md group-hover:bg-secondary transition">
+                <FaGraduationCap className="text-sm sm:text-base" />
               </div>
 
               {/* Content */}
-              <div>
+              <div className="lg:ml-6">
                 <h3 className="text-xl sm:text-2xl font-semibold text-secondary group-hover:text-primary transition">
                   {edu.degree}
                 </h3>
@@ -55,7 +52,7 @@ const Education = () => {
                     ({edu.session})
                   </span>
                 </p>
-                <p className="mt-2 text-gray-600 text-sm sm:text-base leading-relaxed">
+                <p className="mt-2 text-gray-600 text-sm sm:text-base leading-relaxed max-w-3xl">
                   {edu.description}
                 </p>
               </div>

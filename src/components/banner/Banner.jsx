@@ -1,76 +1,128 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaDownload, FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
-import img from "../../assets/ringku.png";
-import resume from '../../assets/Ringku (1).pdf'
+import img from "../../assets/Picture of Ringku.jpg";
+import resume from "../../assets/Resume of Ringku Sutradhar .pdf";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-[70vh] bg-base-200">
-      <div className="hero-content flex-col-reverse lg:flex-row-reverse gap-10">
-        {/* Profile Image */}
-        <img
-          src={img}
-          className="w-64 rounded-full shadow-2xl border-4 border-primary"
-          alt="Ringku"
-        />
+    <section className="min-h-screen bg-gradient-to-r from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center px-6 lg:px-16">
+      
+      {/* Card Container */}
+      <motion.div
+        className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-10 lg:p-16 flex flex-col lg:flex-row items-center gap-10 overflow-hidden relative"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      >
 
-        {/* Text Content */}
-        <div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-3">
-            Hi, I’m <span className="text-accent">Ringku Sutradhar</span>
-          </h1>
+        {/* Left Side - Text */}
+        <motion.div className="max-w-xl space-y-5">
+          
+          {/* Name */}
+          <motion.h1
+            className="text-4xl lg:text-5xl font-extrabold leading-tight text-black dark:text-gray-300"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Hi, I’m Ringku Sutradhar
+          </motion.h1>
 
-          <h2 className="text-xl lg:text-2xl font-semibold mb-4">
-            MERN Stack Developer |{" "}
-            <span className="text-secondary">Frontend Specialist</span>
-          </h2>
+          {/* Designation Button with Infinite Animation */}
+          <motion.div
+            className="inline-block px-6 py-2  text-primary rounded-full font-semibold cursor-pointer shadow-lg select-none"
+            animate={{ y: [0, -5, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          >
+            🚀 MERN Stack Developer | Frontend Specialist
+          </motion.div>
 
-          <p className="mb-6 max-w-xl text-base-content">
-            Passionate about crafting user-friendly web applications with clean
-            UI and efficient code. I love working with React, TailwindCSS, and
-            modern frontend tools.
-          </p>
+          {/* Description */}
+          <motion.p
+            className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4"
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            I build modern, responsive, and user-friendly web applications with{" "}
+            <span className="font-medium text-primary">React, TailwindCSS</span>{" "}
+            and the MERN stack. My passion lies in creating seamless digital
+            experiences with clean code and intuitive design.
+          </motion.p>
 
-          {/* Social Buttons + React Icon */}
-          <div className="flex gap-4 flex-wrap mb-4 items-center">
+          {/* Social Buttons */}
+          <motion.div
+            className="flex gap-4 flex-wrap items-center mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
             <a
               href="https://github.com/Sutradhar2071"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline btn-primary flex items-center gap-2"
+              className="btn btn-outline gap-2 hover:bg-black hover:text-white transition"
             >
-              <FaGithub className="text-xl" />
-              GitHub
+              <FaGithub className="text-lg" /> GitHub
             </a>
 
             <a
-              href="https://www.linkedin.com/in/ringku-sutradhar-8461002aa/"
+              href="https://www.linkedin.com/in/ringku-sutradhar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline btn-secondary flex items-center gap-2"
+              className="btn btn-outline gap-2 text-[#0A66C2] border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition"
             >
-              <FaLinkedin className="text-xl" />
-              LinkedIn
+              <FaLinkedin className="text-lg" /> LinkedIn
             </a>
+          </motion.div>
 
-            {/* React Icon - slow spin */}
-            <div className="text-4xl text-cyan-400 animate-spin-slow">
-              <FaReact />
+          {/* Resume Button */}
+          <motion.a
+            href={resume}
+            download
+            className="btn btn-success gap-2 group hover:scale-105 transition duration-300 shadow-lg mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            <FaDownload className="group-hover:animate-bounce" />
+            Download Resume
+          </motion.a>
+        </motion.div>
+
+        {/* Right Side - Profile Image */}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Gradient Glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary blur-2xl opacity-20 animate-pulse"></div>
+
+          <div className="relative group">
+            <img
+              src={img}
+              className="w-72 lg:w-96 rounded-full shadow-2xl border-4 border-primary transform transition duration-500 group-hover:scale-105"
+              alt="Ringku"
+            />
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-primary text-white px-6 py-1 rounded-full shadow-md text-sm font-medium">
+              MERN Developer
             </div>
           </div>
 
-          {/* Resume Button with Animation */}
-          <a
-            href={resume}
-            download
-            className="btn btn-success btn-sm w-fit flex items-center gap-2 group transition-all duration-300 hover:scale-105"
+          {/* React Logo Infinite Spin */}
+          <motion.div
+            className="absolute -top-6 -right-6 text-5xl text-cyan-400"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           >
-            <FaDownload className="text-lg group-hover:animate-bounce" />
-            Download Resume
-          </a>
-        </div>
-      </div>
-    </div>
+            <FaReact />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

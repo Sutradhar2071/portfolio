@@ -1,23 +1,84 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { FaCode, FaMusic, FaBook, FaRunning } from "react-icons/fa";
+import img from "../assets/Picture of Ringku.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-base-100 px-6 py-16">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-primary mb-6">About Me</h2>
-        <p className="text-lg text-base-content leading-relaxed">
-          Hello! I’m <span className="font-semibold text-accent">Ringku Sutradhar</span>, a passionate and self-motivated MERN Stack Developer with a strong focus on <span className="font-medium">frontend development</span>.  
-          <br /><br />
-          My journey into programming started with curiosity — I wanted to understand how websites work. I began with HTML and CSS, then quickly moved on to mastering JavaScript, React, and now I'm diving deeper into backend technologies like Node.js, Express, and MongoDB.
-          <br /><br />
-          I enjoy building clean, interactive, and responsive user interfaces that provide great user experiences. I’m particularly passionate about working with <span className="font-medium text-secondary">React, TailwindCSS, and Firebase</span> to craft modern web applications.
-          <br /><br />
-          Outside of programming, I enjoy walking daily to stay active, listening to music, and exploring new technologies. I also have a deep interest in learning about design systems and software engineering principles.
-          <br /><br />
-          I'm constantly learning and love collaborating on meaningful projects. Whether it’s a team environment or a solo mission — I’m always ready to build something impactful!
-        </p>
+    <section
+      id="about"
+      className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <motion.h2
+          className="text-4xl lg:text-5xl font-extrabold text-center mb-16 text-gray-900 dark:text-gray-100"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          About <span className="text-blue-500">Me</span>
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
+          >
+            <div className="relative group">
+              <img
+                src={img}
+                alt="Profile"
+                className="rounded-2xl shadow-2xl w-80 lg:w-96 border-4 border-blue-500 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-6 py-1 rounded-full shadow-md font-medium text-sm">
+                MERN Developer
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              Hi, I'm <span className="font-semibold text-blue-500">Ringku Sutradhar</span> 👋  
+              A passionate <span className="font-semibold">Front-End Developer</span> from Bangladesh.  
+              My journey began with <span className="font-medium">HTML & CSS</span>, and now I build modern, responsive, and user-friendly web applications using <span className="font-medium">React.js</span> and <span className="font-medium">TailwindCSS</span>.
+            </p>
+
+            <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              I love crafting beautiful designs, exploring new technologies, and turning ideas into reality.  
+              Outside coding, I enjoy music, reading, and fitness which keep me balanced and motivated.
+            </p>
+
+            {/* Hobbies Section */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-6">
+              {[
+                { icon: <FaCode className="text-3xl text-blue-500" />, label: "Coding" },
+                { icon: <FaMusic className="text-3xl text-green-500" />, label: "Music" },
+                { icon: <FaBook className="text-3xl text-purple-500" />, label: "Reading" },
+                { icon: <FaRunning className="text-3xl text-red-500" />, label: "Fitness" },
+              ].map((hobby, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.1 }}
+                  className="flex flex-col items-center justify-center p-4 rounded-xl shadow-md bg-white dark:bg-gray-700 transition-transform duration-300"
+                >
+                  {hobby.icon}
+                  <p className="text-gray-700 dark:text-gray-300 mt-2 font-medium">{hobby.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
